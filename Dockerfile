@@ -4,10 +4,10 @@ COPY . /usr/src/
 
 WORKDIR /usr/src/
 
-ENV NODE_ENV=production
+ENV NODE_ENV=development
 
 RUN yarn install
 RUN yarn build
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
 EXPOSE 1337
