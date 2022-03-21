@@ -7,11 +7,12 @@ module.exports = ({ env }) => ({
           field: 'slug',
           references: 'title',
         },
+        project: {
+          field: 'slug',
+          references: 'title',
+        }
       },
     },
-  },
-  seo: {
-    enabled: true,
   },
   comments: {
     enabled: true,
