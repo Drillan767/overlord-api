@@ -51,6 +51,9 @@
     "title": {
       "type": "string",
       "required": true
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }

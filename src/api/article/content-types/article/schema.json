@@ -38,6 +38,10 @@
     "description": {
       "type": "text",
       "required": true
+    },
+    "slug": {
+      "type": "string",
+      "unique": true
     }
   }
 }
