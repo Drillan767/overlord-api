@@ -1,0 +1,28 @@
+{
+  "name": "Authenticated",
+  "description": "Default role given to authenticated user.",
+  "type": "authenticated",
+  "permissions": [
+    {
+      "action": "api::homepage.homepage.find"
+    },
+    {
+      "action": "api::project.project.find"
+    },
+    {
+      "action": "api::project.project.findOne"
+    },
+    {
+      "action": "api::tag.tag.find"
+    },
+    {
+      "action": "api::tag.tag.findOne"
+    },
+    {
+      "action": "plugin::users-permissions.auth.connect"
+    },
+    {
+      "action": "plugin::users-permissions.user.me"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Public",
+  "description": "Default role given to unauthenticated user.",
+  "type": "public",
+  "permissions": [
+    {
+      "action": "api::article.article.find"
+    },
+    {
+      "action": "api::article.article.findOne"
+    },
+    {
+      "action": "api::homepage.homepage.find"
+    },
+    {
+      "action": "api::project.project.find"
+    },
+    {
+      "action": "api::project.project.findOne"
+    },
+    {
+      "action": "api::tag.tag.find"
+    },
+    {
+      "action": "api::tag.tag.findOne"
+    },
+    {
+      "action": "plugin::comments.client.findAllInHierarchy"
+    },
+    {
+      "action": "plugin::comments.client.post"
+    },
+    {
+      "action": "plugin::menus.menu.find"
+    },
+    {
+      "action": "plugin::menus.menu.findOne"
+    },
+    {
+      "action": "plugin::users-permissions.auth.callback"
+    },
+    {
+      "action": "plugin::users-permissions.auth.connect"
+    },
+    {
+      "action": "plugin::users-permissions.auth.register"
+    },
+    {
+      "action": "plugin::users-permissions.user.me"
+    }
+  ]
+}

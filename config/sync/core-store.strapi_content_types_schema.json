@@ -1,0 +1,2682 @@
+{
+  "key": "strapi_content_types_schema",
+  "value": {
+    "admin::permission": {
+      "collectionName": "admin_permissions",
+      "info": {
+        "name": "Permission",
+        "description": "",
+        "singularName": "permission",
+        "pluralName": "permissions",
+        "displayName": "Permission"
+      },
+      "options": {},
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "action": {
+          "type": "string",
+          "minLength": 1,
+          "configurable": false,
+          "required": true
+        },
+        "subject": {
+          "type": "string",
+          "minLength": 1,
+          "configurable": false,
+          "required": false
+        },
+        "properties": {
+          "type": "json",
+          "configurable": false,
+          "required": false,
+          "default": {}
+        },
+        "conditions": {
+          "type": "json",
+          "configurable": false,
+          "required": false,
+          "default": []
+        },
+        "role": {
+          "configurable": false,
+          "type": "relation",
+          "relation": "manyToOne",
+          "inversedBy": "permissions",
+          "target": "admin::role"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "collectionName": "admin_permissions",
+        "info": {
+          "name": "Permission",
+          "description": "",
+          "singularName": "permission",
+          "pluralName": "permissions",
+          "displayName": "Permission"
+        },
+        "options": {},
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "action": {
+            "type": "string",
+            "minLength": 1,
+            "configurable": false,
+            "required": true
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1,
+            "configurable": false,
+            "required": false
+          },
+          "properties": {
+            "type": "json",
+            "configurable": false,
+            "required": false,
+            "default": {}
+          },
+          "conditions": {
+            "type": "json",
+            "configurable": false,
+            "required": false,
+            "default": []
+          },
+          "role": {
+            "configurable": false,
+            "type": "relation",
+            "relation": "manyToOne",
+            "inversedBy": "permissions",
+            "target": "admin::role"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "permission",
+      "connection": "default",
+      "uid": "admin::permission",
+      "plugin": "admin",
+      "globalId": "AdminPermission"
+    },
+    "admin::user": {
+      "collectionName": "admin_users",
+      "info": {
+        "name": "User",
+        "description": "",
+        "singularName": "user",
+        "pluralName": "users",
+        "displayName": "User"
+      },
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "firstname": {
+          "type": "string",
+          "unique": false,
+          "minLength": 1,
+          "configurable": false,
+          "required": false
+        },
+        "lastname": {
+          "type": "string",
+          "unique": false,
+          "minLength": 1,
+          "configurable": false,
+          "required": false
+        },
+        "username": {
+          "type": "string",
+          "unique": false,
+          "configurable": false,
+          "required": false
+        },
+        "email": {
+          "type": "email",
+          "minLength": 6,
+          "configurable": false,
+          "required": true,
+          "unique": true,
+          "private": true
+        },
+        "password": {
+          "type": "password",
+          "minLength": 6,
+          "configurable": false,
+          "required": false,
+          "private": true
+        },
+        "resetPasswordToken": {
+          "type": "string",
+          "configurable": false,
+          "private": true
+        },
+        "registrationToken": {
+          "type": "string",
+          "configurable": false,
+          "private": true
+        },
+        "isActive": {
+          "type": "boolean",
+          "default": false,
+          "configurable": false,
+          "private": true
+        },
+        "roles": {
+          "configurable": false,
+          "private": true,
+          "type": "relation",
+          "relation": "manyToMany",
+          "inversedBy": "users",
+          "target": "admin::role",
+          "collectionName": "strapi_users_roles"
+        },
+        "blocked": {
+          "type": "boolean",
+          "default": false,
+          "configurable": false,
+          "private": true
+        },
+        "preferedLanguage": {
+          "type": "string",
+          "configurable": false,
+          "required": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "collectionName": "admin_users",
+        "info": {
+          "name": "User",
+          "description": "",
+          "singularName": "user",
+          "pluralName": "users",
+          "displayName": "User"
+        },
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "firstname": {
+            "type": "string",
+            "unique": false,
+            "minLength": 1,
+            "configurable": false,
+            "required": false
+          },
+          "lastname": {
+            "type": "string",
+            "unique": false,
+            "minLength": 1,
+            "configurable": false,
+            "required": false
+          },
+          "username": {
+            "type": "string",
+            "unique": false,
+            "configurable": false,
+            "required": false
+          },
+          "email": {
+            "type": "email",
+            "minLength": 6,
+            "configurable": false,
+            "required": true,
+            "unique": true,
+            "private": true
+          },
+          "password": {
+            "type": "password",
+            "minLength": 6,
+            "configurable": false,
+            "required": false,
+            "private": true
+          },
+          "resetPasswordToken": {
+            "type": "string",
+            "configurable": false,
+            "private": true
+          },
+          "registrationToken": {
+            "type": "string",
+            "configurable": false,
+            "private": true
+          },
+          "isActive": {
+            "type": "boolean",
+            "default": false,
+            "configurable": false,
+            "private": true
+          },
+          "roles": {
+            "configurable": false,
+            "private": true,
+            "type": "relation",
+            "relation": "manyToMany",
+            "inversedBy": "users",
+            "target": "admin::role",
+            "collectionName": "strapi_users_roles"
+          },
+          "blocked": {
+            "type": "boolean",
+            "default": false,
+            "configurable": false,
+            "private": true
+          },
+          "preferedLanguage": {
+            "type": "string",
+            "configurable": false,
+            "required": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "user",
+      "connection": "default",
+      "uid": "admin::user",
+      "plugin": "admin",
+      "globalId": "AdminUser"
+    },
+    "admin::role": {
+      "collectionName": "admin_roles",
+      "info": {
+        "name": "Role",
+        "description": "",
+        "singularName": "role",
+        "pluralName": "roles",
+        "displayName": "Role"
+      },
+      "options": {},
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "unique": true,
+          "configurable": false,
+          "required": true
+        },
+        "code": {
+          "type": "string",
+          "minLength": 1,
+          "unique": true,
+          "configurable": false,
+          "required": true
+        },
+        "description": {
+          "type": "string",
+          "configurable": false
+        },
+        "users": {
+          "configurable": false,
+          "type": "relation",
+          "relation": "manyToMany",
+          "mappedBy": "roles",
+          "target": "admin::user"
+        },
+        "permissions": {
+          "configurable": false,
+          "type": "relation",
+          "relation": "oneToMany",
+          "mappedBy": "role",
+          "target": "admin::permission"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "collectionName": "admin_roles",
+        "info": {
+          "name": "Role",
+          "description": "",
+          "singularName": "role",
+          "pluralName": "roles",
+          "displayName": "Role"
+        },
+        "options": {},
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "unique": true,
+            "configurable": false,
+            "required": true
+          },
+          "code": {
+            "type": "string",
+            "minLength": 1,
+            "unique": true,
+            "configurable": false,
+            "required": true
+          },
+          "description": {
+            "type": "string",
+            "configurable": false
+          },
+          "users": {
+            "configurable": false,
+            "type": "relation",
+            "relation": "manyToMany",
+            "mappedBy": "roles",
+            "target": "admin::user"
+          },
+          "permissions": {
+            "configurable": false,
+            "type": "relation",
+            "relation": "oneToMany",
+            "mappedBy": "role",
+            "target": "admin::permission"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "role",
+      "connection": "default",
+      "uid": "admin::role",
+      "plugin": "admin",
+      "globalId": "AdminRole"
+    },
+    "admin::api-token": {
+      "collectionName": "strapi_api_tokens",
+      "info": {
+        "name": "Api Token",
+        "singularName": "api-token",
+        "pluralName": "api-tokens",
+        "displayName": "Api Token",
+        "description": ""
+      },
+      "options": {},
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "configurable": false,
+          "required": true
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "configurable": false,
+          "required": false,
+          "default": ""
+        },
+        "type": {
+          "type": "enumeration",
+          "enum": [
+            "read-only",
+            "full-access"
+          ],
+          "configurable": false,
+          "required": false,
+          "default": "read-only"
+        },
+        "accessKey": {
+          "type": "string",
+          "minLength": 1,
+          "configurable": false,
+          "required": true
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "collectionName": "strapi_api_tokens",
+        "info": {
+          "name": "Api Token",
+          "singularName": "api-token",
+          "pluralName": "api-tokens",
+          "displayName": "Api Token",
+          "description": ""
+        },
+        "options": {},
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "configurable": false,
+            "required": true
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "configurable": false,
+            "required": false,
+            "default": ""
+          },
+          "type": {
+            "type": "enumeration",
+            "enum": [
+              "read-only",
+              "full-access"
+            ],
+            "configurable": false,
+            "required": false,
+            "default": "read-only"
+          },
+          "accessKey": {
+            "type": "string",
+            "minLength": 1,
+            "configurable": false,
+            "required": true
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "api-token",
+      "connection": "default",
+      "uid": "admin::api-token",
+      "plugin": "admin",
+      "globalId": "AdminApiToken"
+    },
+    "plugin::upload.file": {
+      "collectionName": "files",
+      "info": {
+        "singularName": "file",
+        "pluralName": "files",
+        "displayName": "File",
+        "description": ""
+      },
+      "options": {},
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "name": {
+          "type": "string",
+          "configurable": false,
+          "required": true
+        },
+        "alternativeText": {
+          "type": "string",
+          "configurable": false
+        },
+        "caption": {
+          "type": "string",
+          "configurable": false
+        },
+        "width": {
+          "type": "integer",
+          "configurable": false
+        },
+        "height": {
+          "type": "integer",
+          "configurable": false
+        },
+        "formats": {
+          "type": "json",
+          "configurable": false
+        },
+        "hash": {
+          "type": "string",
+          "configurable": false,
+          "required": true
+        },
+        "ext": {
+          "type": "string",
+          "configurable": false
+        },
+        "mime": {
+          "type": "string",
+          "configurable": false,
+          "required": true
+        },
+        "size": {
+          "type": "decimal",
+          "configurable": false,
+          "required": true
+        },
+        "url": {
+          "type": "string",
+          "configurable": false,
+          "required": true
+        },
+        "previewUrl": {
+          "type": "string",
+          "configurable": false
+        },
+        "provider": {
+          "type": "string",
+          "configurable": false,
+          "required": true
+        },
+        "provider_metadata": {
+          "type": "json",
+          "configurable": false
+        },
+        "related": {
+          "type": "relation",
+          "relation": "morphToMany",
+          "configurable": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "sitemap_exclude": {
+          "writable": true,
+          "private": true,
+          "configurable": false,
+          "visible": false,
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "collectionName": "files",
+        "info": {
+          "singularName": "file",
+          "pluralName": "files",
+          "displayName": "File",
+          "description": ""
+        },
+        "options": {},
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "name": {
+            "type": "string",
+            "configurable": false,
+            "required": true
+          },
+          "alternativeText": {
+            "type": "string",
+            "configurable": false
+          },
+          "caption": {
+            "type": "string",
+            "configurable": false
+          },
+          "width": {
+            "type": "integer",
+            "configurable": false
+          },
+          "height": {
+            "type": "integer",
+            "configurable": false
+          },
+          "formats": {
+            "type": "json",
+            "configurable": false
+          },
+          "hash": {
+            "type": "string",
+            "configurable": false,
+            "required": true
+          },
+          "ext": {
+            "type": "string",
+            "configurable": false
+          },
+          "mime": {
+            "type": "string",
+            "configurable": false,
+            "required": true
+          },
+          "size": {
+            "type": "decimal",
+            "configurable": false,
+            "required": true
+          },
+          "url": {
+            "type": "string",
+            "configurable": false,
+            "required": true
+          },
+          "previewUrl": {
+            "type": "string",
+            "configurable": false
+          },
+          "provider": {
+            "type": "string",
+            "configurable": false,
+            "required": true
+          },
+          "provider_metadata": {
+            "type": "json",
+            "configurable": false
+          },
+          "related": {
+            "type": "relation",
+            "relation": "morphToMany",
+            "configurable": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "file",
+      "connection": "default",
+      "uid": "plugin::upload.file",
+      "plugin": "upload",
+      "globalId": "UploadFile"
+    },
+    "plugin::menus.menu": {
+      "kind": "collectionType",
+      "collectionName": "menus",
+      "info": {
+        "displayName": "Menu",
+        "singularName": "menu",
+        "pluralName": "menus",
+        "tableName": "menus"
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "title",
+          "required": true
+        },
+        "items": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "plugin::menus.menu-item",
+          "mappedBy": "root_menu"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "sitemap_exclude": {
+          "writable": true,
+          "private": true,
+          "configurable": false,
+          "visible": false,
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "__schema__": {
+        "collectionName": "menus",
+        "info": {
+          "displayName": "Menu",
+          "singularName": "menu",
+          "pluralName": "menus",
+          "tableName": "menus"
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "title": {
+            "type": "string",
+            "required": true
+          },
+          "slug": {
+            "type": "uid",
+            "targetField": "title",
+            "required": true
+          },
+          "items": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "plugin::menus.menu-item",
+            "mappedBy": "root_menu"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "menu",
+      "connection": "default",
+      "uid": "plugin::menus.menu",
+      "plugin": "menus",
+      "globalId": "MenusMenu"
+    },
+    "plugin::menus.menu-item": {
+      "kind": "collectionType",
+      "collectionName": "menu_items",
+      "info": {
+        "displayName": "Menu Item",
+        "singularName": "menu-item",
+        "pluralName": "menu-items",
+        "tableName": "menu_items"
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "order": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "url": {
+          "type": "string"
+        },
+        "target": {
+          "type": "enumeration",
+          "enum": [
+            "_blank",
+            "_parent",
+            "_self",
+            "_top"
+          ]
+        },
+        "root_menu": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::menus.menu",
+          "inversedBy": "items",
+          "required": true
+        },
+        "parent": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "plugin::menus.menu-item"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "sitemap_exclude": {
+          "writable": true,
+          "private": true,
+          "configurable": false,
+          "visible": false,
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "__schema__": {
+        "collectionName": "menu_items",
+        "info": {
+          "displayName": "Menu Item",
+          "singularName": "menu-item",
+          "pluralName": "menu-items",
+          "tableName": "menu_items"
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "order": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string",
+            "required": true
+          },
+          "url": {
+            "type": "string"
+          },
+          "target": {
+            "type": "enumeration",
+            "enum": [
+              "_blank",
+              "_parent",
+              "_self",
+              "_top"
+            ]
+          },
+          "root_menu": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::menus.menu",
+            "inversedBy": "items",
+            "required": true
+          },
+          "parent": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "plugin::menus.menu-item"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "menu-item",
+      "connection": "default",
+      "uid": "plugin::menus.menu-item",
+      "plugin": "menus",
+      "globalId": "MenusMenuItem"
+    },
+    "plugin::comments.comment": {
+      "info": {
+        "tableName": "plugin-comments-comments",
+        "singularName": "comment",
+        "pluralName": "comments",
+        "displayName": "Comment",
+        "description": "Comment content type",
+        "kind": "collectionType"
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "content": {
+          "type": "text",
+          "configurable": false,
+          "required": true
+        },
+        "blocked": {
+          "type": "boolean",
+          "default": false,
+          "configurable": false
+        },
+        "blockedThread": {
+          "type": "boolean",
+          "default": false,
+          "configurable": false
+        },
+        "blockReason": {
+          "type": "string",
+          "configurable": false
+        },
+        "authorUser": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "plugin::users-permissions.user",
+          "configurable": false
+        },
+        "authorId": {
+          "type": "string",
+          "configurable": false
+        },
+        "authorName": {
+          "type": "string",
+          "configurable": false
+        },
+        "authorEmail": {
+          "type": "email",
+          "configurable": false
+        },
+        "authorAvatar": {
+          "type": "string",
+          "configurable": false
+        },
+        "removed": {
+          "type": "boolean",
+          "configurable": false
+        },
+        "approvalStatus": {
+          "type": "string",
+          "configurable": false
+        },
+        "related": {
+          "type": "string",
+          "configurable": false
+        },
+        "reports": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "plugin::comments.comment-report",
+          "mappedBy": "related",
+          "configurable": false
+        },
+        "threadOf": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "plugin::comments.comment",
+          "configurable": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "sitemap_exclude": {
+          "writable": true,
+          "private": true,
+          "configurable": false,
+          "visible": false,
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "info": {
+          "tableName": "plugin-comments-comments",
+          "singularName": "comment",
+          "pluralName": "comments",
+          "displayName": "Comment",
+          "description": "Comment content type",
+          "kind": "collectionType"
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "content": {
+            "type": "text",
+            "configurable": false,
+            "required": true
+          },
+          "blocked": {
+            "type": "boolean",
+            "default": false,
+            "configurable": false
+          },
+          "blockedThread": {
+            "type": "boolean",
+            "default": false,
+            "configurable": false
+          },
+          "blockReason": {
+            "type": "string",
+            "configurable": false
+          },
+          "authorUser": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "plugin::users-permissions.user",
+            "configurable": false
+          },
+          "authorId": {
+            "type": "string",
+            "configurable": false
+          },
+          "authorName": {
+            "type": "string",
+            "configurable": false
+          },
+          "authorEmail": {
+            "type": "email",
+            "configurable": false
+          },
+          "authorAvatar": {
+            "type": "string",
+            "configurable": false
+          },
+          "removed": {
+            "type": "boolean",
+            "configurable": false
+          },
+          "approvalStatus": {
+            "type": "string",
+            "configurable": false
+          },
+          "related": {
+            "type": "string",
+            "configurable": false
+          },
+          "reports": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "plugin::comments.comment-report",
+            "mappedBy": "related",
+            "configurable": false
+          },
+          "threadOf": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "plugin::comments.comment",
+            "configurable": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "comment",
+      "connection": "default",
+      "uid": "plugin::comments.comment",
+      "plugin": "comments",
+      "collectionName": "comments_comment",
+      "globalId": "CommentsComment"
+    },
+    "plugin::comments.comment-report": {
+      "info": {
+        "tableName": "plugin-comments-reports",
+        "singularName": "comment-report",
+        "pluralName": "comment-reports",
+        "displayName": "Reports",
+        "description": "Reports content type",
+        "kind": "collectionType"
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "content": {
+          "type": "text",
+          "configurable": false
+        },
+        "reason": {
+          "type": "enumeration",
+          "enum": [
+            "BAD_LANGUAGE",
+            "DISCRIMINATION",
+            "OTHER"
+          ],
+          "default": "OTHER",
+          "configurable": false,
+          "required": true
+        },
+        "resolved": {
+          "type": "boolean",
+          "default": false,
+          "configurable": false
+        },
+        "related": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::comments.comment",
+          "inversedBy": "reports",
+          "configurable": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "sitemap_exclude": {
+          "writable": true,
+          "private": true,
+          "configurable": false,
+          "visible": false,
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "info": {
+          "tableName": "plugin-comments-reports",
+          "singularName": "comment-report",
+          "pluralName": "comment-reports",
+          "displayName": "Reports",
+          "description": "Reports content type",
+          "kind": "collectionType"
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "content": {
+            "type": "text",
+            "configurable": false
+          },
+          "reason": {
+            "type": "enumeration",
+            "enum": [
+              "BAD_LANGUAGE",
+              "DISCRIMINATION",
+              "OTHER"
+            ],
+            "default": "OTHER",
+            "configurable": false,
+            "required": true
+          },
+          "resolved": {
+            "type": "boolean",
+            "default": false,
+            "configurable": false
+          },
+          "related": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::comments.comment",
+            "inversedBy": "reports",
+            "configurable": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "comment-report",
+      "connection": "default",
+      "uid": "plugin::comments.comment-report",
+      "plugin": "comments",
+      "collectionName": "comments_comment-report",
+      "globalId": "CommentsCommentReport"
+    },
+    "plugin::i18n.locale": {
+      "info": {
+        "singularName": "locale",
+        "pluralName": "locales",
+        "collectionName": "locales",
+        "displayName": "Locale",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "name": {
+          "type": "string",
+          "min": 1,
+          "max": 50,
+          "configurable": false
+        },
+        "code": {
+          "type": "string",
+          "unique": true,
+          "configurable": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "info": {
+          "singularName": "locale",
+          "pluralName": "locales",
+          "collectionName": "locales",
+          "displayName": "Locale",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "name": {
+            "type": "string",
+            "min": 1,
+            "max": 50,
+            "configurable": false
+          },
+          "code": {
+            "type": "string",
+            "unique": true,
+            "configurable": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "locale",
+      "connection": "default",
+      "uid": "plugin::i18n.locale",
+      "plugin": "i18n",
+      "collectionName": "i18n_locale",
+      "globalId": "I18NLocale"
+    },
+    "plugin::users-permissions.permission": {
+      "collectionName": "up_permissions",
+      "info": {
+        "name": "permission",
+        "description": "",
+        "singularName": "permission",
+        "pluralName": "permissions",
+        "displayName": "Permission"
+      },
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "action": {
+          "type": "string",
+          "required": true,
+          "configurable": false
+        },
+        "role": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.role",
+          "inversedBy": "permissions",
+          "configurable": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "collectionName": "up_permissions",
+        "info": {
+          "name": "permission",
+          "description": "",
+          "singularName": "permission",
+          "pluralName": "permissions",
+          "displayName": "Permission"
+        },
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "action": {
+            "type": "string",
+            "required": true,
+            "configurable": false
+          },
+          "role": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.role",
+            "inversedBy": "permissions",
+            "configurable": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "permission",
+      "connection": "default",
+      "uid": "plugin::users-permissions.permission",
+      "plugin": "users-permissions",
+      "globalId": "UsersPermissionsPermission"
+    },
+    "plugin::users-permissions.role": {
+      "collectionName": "up_roles",
+      "info": {
+        "name": "role",
+        "description": "",
+        "singularName": "role",
+        "pluralName": "roles",
+        "displayName": "Role"
+      },
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "name": {
+          "type": "string",
+          "minLength": 3,
+          "required": true,
+          "configurable": false
+        },
+        "description": {
+          "type": "string",
+          "configurable": false
+        },
+        "type": {
+          "type": "string",
+          "unique": true,
+          "configurable": false
+        },
+        "permissions": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "plugin::users-permissions.permission",
+          "mappedBy": "role",
+          "configurable": false
+        },
+        "users": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "plugin::users-permissions.user",
+          "mappedBy": "role",
+          "configurable": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "collectionName": "up_roles",
+        "info": {
+          "name": "role",
+          "description": "",
+          "singularName": "role",
+          "pluralName": "roles",
+          "displayName": "Role"
+        },
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "name": {
+            "type": "string",
+            "minLength": 3,
+            "required": true,
+            "configurable": false
+          },
+          "description": {
+            "type": "string",
+            "configurable": false
+          },
+          "type": {
+            "type": "string",
+            "unique": true,
+            "configurable": false
+          },
+          "permissions": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "plugin::users-permissions.permission",
+            "mappedBy": "role",
+            "configurable": false
+          },
+          "users": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "plugin::users-permissions.user",
+            "mappedBy": "role",
+            "configurable": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "role",
+      "connection": "default",
+      "uid": "plugin::users-permissions.role",
+      "plugin": "users-permissions",
+      "globalId": "UsersPermissionsRole"
+    },
+    "plugin::users-permissions.user": {
+      "collectionName": "up_users",
+      "info": {
+        "name": "user",
+        "description": "",
+        "singularName": "user",
+        "pluralName": "users",
+        "displayName": "User"
+      },
+      "options": {
+        "draftAndPublish": false,
+        "timestamps": true
+      },
+      "attributes": {
+        "username": {
+          "type": "string",
+          "minLength": 3,
+          "unique": true,
+          "configurable": false,
+          "required": true
+        },
+        "email": {
+          "type": "email",
+          "minLength": 6,
+          "configurable": false,
+          "required": true
+        },
+        "provider": {
+          "type": "string",
+          "configurable": false
+        },
+        "password": {
+          "type": "password",
+          "minLength": 6,
+          "configurable": false,
+          "private": true
+        },
+        "resetPasswordToken": {
+          "type": "string",
+          "configurable": false,
+          "private": true
+        },
+        "confirmationToken": {
+          "type": "string",
+          "configurable": false,
+          "private": true
+        },
+        "confirmed": {
+          "type": "boolean",
+          "default": false,
+          "configurable": false
+        },
+        "blocked": {
+          "type": "boolean",
+          "default": false,
+          "configurable": false
+        },
+        "role": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.role",
+          "inversedBy": "users",
+          "configurable": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "sitemap_exclude": {
+          "writable": true,
+          "private": true,
+          "configurable": false,
+          "visible": false,
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "config": {
+        "attributes": {
+          "resetPasswordToken": {
+            "hidden": true
+          },
+          "confirmationToken": {
+            "hidden": true
+          },
+          "provider": {
+            "hidden": true
+          }
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "collectionName": "up_users",
+        "info": {
+          "name": "user",
+          "description": "",
+          "singularName": "user",
+          "pluralName": "users",
+          "displayName": "User"
+        },
+        "options": {
+          "draftAndPublish": false,
+          "timestamps": true
+        },
+        "attributes": {
+          "username": {
+            "type": "string",
+            "minLength": 3,
+            "unique": true,
+            "configurable": false,
+            "required": true
+          },
+          "email": {
+            "type": "email",
+            "minLength": 6,
+            "configurable": false,
+            "required": true
+          },
+          "provider": {
+            "type": "string",
+            "configurable": false
+          },
+          "password": {
+            "type": "password",
+            "minLength": 6,
+            "configurable": false,
+            "private": true
+          },
+          "resetPasswordToken": {
+            "type": "string",
+            "configurable": false,
+            "private": true
+          },
+          "confirmationToken": {
+            "type": "string",
+            "configurable": false,
+            "private": true
+          },
+          "confirmed": {
+            "type": "boolean",
+            "default": false,
+            "configurable": false
+          },
+          "blocked": {
+            "type": "boolean",
+            "default": false,
+            "configurable": false
+          },
+          "role": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.role",
+            "inversedBy": "users",
+            "configurable": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "user",
+      "connection": "default",
+      "uid": "plugin::users-permissions.user",
+      "plugin": "users-permissions",
+      "globalId": "UsersPermissionsUser"
+    },
+    "plugin::entity-notes.note": {
+      "kind": "collectionType",
+      "collectionName": "notes",
+      "info": {
+        "singularName": "note",
+        "pluralName": "notes",
+        "displayName": "notes"
+      },
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "options": {
+        "draftAndPublish": false,
+        "comment": ""
+      },
+      "attributes": {
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "text"
+        },
+        "entityId": {
+          "type": "integer"
+        },
+        "entitySlug": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "sitemap_exclude": {
+          "writable": true,
+          "private": true,
+          "configurable": false,
+          "visible": false,
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "__schema__": {
+        "collectionName": "notes",
+        "info": {
+          "singularName": "note",
+          "pluralName": "notes",
+          "displayName": "notes"
+        },
+        "options": {
+          "draftAndPublish": false,
+          "comment": ""
+        },
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "title": {
+            "type": "string"
+          },
+          "content": {
+            "type": "text"
+          },
+          "entityId": {
+            "type": "integer"
+          },
+          "entitySlug": {
+            "type": "string"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "note",
+      "connection": "default",
+      "uid": "plugin::entity-notes.note",
+      "plugin": "entity-notes",
+      "globalId": "EntityNotesNote"
+    },
+    "api::article.article": {
+      "kind": "collectionType",
+      "collectionName": "articles",
+      "info": {
+        "singularName": "article",
+        "pluralName": "articles",
+        "displayName": "article",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "unique": true
+        },
+        "body": {
+          "type": "richtext",
+          "required": true
+        },
+        "illustration": {
+          "type": "media",
+          "multiple": false,
+          "required": true,
+          "allowedTypes": [
+            "images"
+          ]
+        },
+        "tags": {
+          "type": "relation",
+          "relation": "manyToMany",
+          "target": "api::tag.tag",
+          "inversedBy": "articles"
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "slug": {
+          "type": "string",
+          "unique": true
+        },
+        "featured": {
+          "type": "boolean",
+          "default": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "sitemap_exclude": {
+          "writable": true,
+          "private": true,
+          "configurable": false,
+          "visible": false,
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "__schema__": {
+        "collectionName": "articles",
+        "info": {
+          "singularName": "article",
+          "pluralName": "articles",
+          "displayName": "article",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "title": {
+            "type": "string",
+            "required": true,
+            "unique": true
+          },
+          "body": {
+            "type": "richtext",
+            "required": true
+          },
+          "illustration": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": [
+              "images"
+            ]
+          },
+          "tags": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::tag.tag",
+            "inversedBy": "articles"
+          },
+          "description": {
+            "type": "text",
+            "required": true
+          },
+          "slug": {
+            "type": "string",
+            "unique": true
+          },
+          "featured": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "article",
+      "connection": "default",
+      "uid": "api::article.article",
+      "apiName": "article",
+      "globalId": "Article",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::homepage.homepage": {
+      "kind": "singleType",
+      "collectionName": "homepages",
+      "info": {
+        "singularName": "homepage",
+        "pluralName": "homepages",
+        "displayName": "homepage",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "full_name": {
+          "type": "string",
+          "required": true
+        },
+        "landing": {
+          "type": "media",
+          "multiple": false,
+          "required": true,
+          "allowedTypes": [
+            "images"
+          ]
+        },
+        "description": {
+          "type": "richtext"
+        },
+        "baseline": {
+          "type": "string",
+          "required": true
+        },
+        "words": {
+          "displayName": "wordcloud",
+          "type": "component",
+          "repeatable": true,
+          "component": "homepage.wordcloud"
+        },
+        "user": {
+          "allowedTypes": [
+            "images"
+          ],
+          "type": "media",
+          "multiple": false,
+          "required": true
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "sitemap_exclude": {
+          "writable": true,
+          "private": true,
+          "configurable": false,
+          "visible": false,
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "__schema__": {
+        "collectionName": "homepages",
+        "info": {
+          "singularName": "homepage",
+          "pluralName": "homepages",
+          "displayName": "homepage",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "full_name": {
+            "type": "string",
+            "required": true
+          },
+          "landing": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": [
+              "images"
+            ]
+          },
+          "description": {
+            "type": "richtext"
+          },
+          "baseline": {
+            "type": "string",
+            "required": true
+          },
+          "words": {
+            "displayName": "wordcloud",
+            "type": "component",
+            "repeatable": true,
+            "component": "homepage.wordcloud"
+          },
+          "user": {
+            "allowedTypes": [
+              "images"
+            ],
+            "type": "media",
+            "multiple": false,
+            "required": true
+          }
+        },
+        "kind": "singleType"
+      },
+      "modelType": "contentType",
+      "modelName": "homepage",
+      "connection": "default",
+      "uid": "api::homepage.homepage",
+      "apiName": "homepage",
+      "globalId": "Homepage",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::project.project": {
+      "kind": "collectionType",
+      "collectionName": "projects",
+      "info": {
+        "singularName": "project",
+        "pluralName": "projects",
+        "displayName": "project",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "date": {
+          "required": true,
+          "type": "date"
+        },
+        "screenshots": {
+          "type": "media",
+          "multiple": true,
+          "required": true,
+          "allowedTypes": [
+            "images"
+          ]
+        },
+        "illustration": {
+          "type": "media",
+          "multiple": false,
+          "required": false,
+          "allowedTypes": [
+            "images"
+          ]
+        },
+        "repo_link": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "body": {
+          "type": "richtext",
+          "required": true
+        },
+        "tags": {
+          "type": "relation",
+          "relation": "manyToMany",
+          "target": "api::tag.tag",
+          "inversedBy": "projects"
+        },
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "slug": {
+          "type": "string"
+        },
+        "featured": {
+          "type": "boolean",
+          "default": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "sitemap_exclude": {
+          "writable": true,
+          "private": true,
+          "configurable": false,
+          "visible": false,
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "__schema__": {
+        "collectionName": "projects",
+        "info": {
+          "singularName": "project",
+          "pluralName": "projects",
+          "displayName": "project",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "date": {
+            "required": true,
+            "type": "date"
+          },
+          "screenshots": {
+            "type": "media",
+            "multiple": true,
+            "required": true,
+            "allowedTypes": [
+              "images"
+            ]
+          },
+          "illustration": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+              "images"
+            ]
+          },
+          "repo_link": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "body": {
+            "type": "richtext",
+            "required": true
+          },
+          "tags": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::tag.tag",
+            "inversedBy": "projects"
+          },
+          "title": {
+            "type": "string",
+            "required": true
+          },
+          "slug": {
+            "type": "string"
+          },
+          "featured": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "project",
+      "connection": "default",
+      "uid": "api::project.project",
+      "apiName": "project",
+      "globalId": "Project",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::tag.tag": {
+      "kind": "collectionType",
+      "collectionName": "tags",
+      "info": {
+        "singularName": "tag",
+        "pluralName": "tags",
+        "displayName": "tag"
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text"
+        },
+        "articles": {
+          "type": "relation",
+          "relation": "manyToMany",
+          "target": "api::article.article",
+          "mappedBy": "tags"
+        },
+        "projects": {
+          "type": "relation",
+          "relation": "manyToMany",
+          "target": "api::project.project",
+          "mappedBy": "tags"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "sitemap_exclude": {
+          "writable": true,
+          "private": true,
+          "configurable": false,
+          "visible": false,
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "__schema__": {
+        "collectionName": "tags",
+        "info": {
+          "singularName": "tag",
+          "pluralName": "tags",
+          "displayName": "tag"
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "title": {
+            "type": "string",
+            "required": true
+          },
+          "description": {
+            "type": "text"
+          },
+          "articles": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::article.article",
+            "mappedBy": "tags"
+          },
+          "projects": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::project.project",
+            "mappedBy": "tags"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "tag",
+      "connection": "default",
+      "uid": "api::tag.tag",
+      "apiName": "tag",
+      "globalId": "Tag",
+      "actions": {},
+      "lifecycles": {}
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

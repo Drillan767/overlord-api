@@ -1,0 +1,256 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::project.project",
+  "value": {
+    "uid": "api::project.project",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "title",
+      "defaultSortBy": "repo_link",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "date": {
+        "edit": {
+          "label": "Project date",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "date",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "screenshots": {
+        "edit": {
+          "label": "screenshots",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "screenshots",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "illustration": {
+        "edit": {
+          "label": "illustration",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "illustration",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "repo_link": {
+        "edit": {
+          "label": "Repo link",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "repo_link",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "website": {
+        "edit": {
+          "label": "Website link",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "website",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "body": {
+        "edit": {
+          "label": "body",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "body",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "tags": {
+        "edit": {
+          "label": "tags",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "title"
+        },
+        "list": {
+          "label": "tags",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "title": {
+        "edit": {
+          "label": "title",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "title",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "slug": {
+        "edit": {
+          "label": "slug",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "slug",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "featured": {
+        "edit": {
+          "label": "featured",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "featured",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "date",
+        "screenshots",
+        "title"
+      ],
+      "edit": [
+        [
+          {
+            "name": "title",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "illustration",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "body",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "date",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "screenshots",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "repo_link",
+            "size": 6
+          },
+          {
+            "name": "website",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "featured",
+            "size": 4
+          }
+        ]
+      ],
+      "editRelations": [
+        "tags"
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

@@ -42,6 +42,10 @@
     "slug": {
       "type": "string",
       "unique": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

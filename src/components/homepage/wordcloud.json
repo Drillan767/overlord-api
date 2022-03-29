@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_homepage_wordclouds",
+  "info": {
+    "displayName": "wordcloud",
+    "icon": "cloud",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "word": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

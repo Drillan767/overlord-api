@@ -14,6 +14,12 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  'menus': {
+    enabled: true,
+    config: {
+      maxDepth: 3,
+    },
+  },
   comments: {
     enabled: true,
     config: {
