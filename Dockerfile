@@ -4,8 +4,6 @@ COPY . /usr/src/
 
 WORKDIR /usr/src/
 
-ENV NODE_ENV=development
-
 RUN yarn install
 RUN yarn build
 

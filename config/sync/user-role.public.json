@@ -37,6 +37,9 @@
       "action": "plugin::menus.menu.findOne"
     },
     {
+      "action": "plugin::slugify.slugController.findSlug"
+    },
+    {
       "action": "plugin::users-permissions.auth.callback"
     },
     {
