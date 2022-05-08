@@ -2113,16 +2113,30 @@
       "options": {
         "draftAndPublish": true
       },
-      "pluginOptions": {},
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "attributes": {
         "title": {
           "type": "string",
           "required": true,
-          "unique": true
+          "unique": true,
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "body": {
           "type": "richtext",
-          "required": true
+          "required": true,
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "illustration": {
           "type": "media",
@@ -2130,7 +2144,12 @@
           "required": true,
           "allowedTypes": [
             "images"
-          ]
+          ],
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "tags": {
           "type": "relation",
@@ -2140,15 +2159,30 @@
         },
         "description": {
           "type": "text",
-          "required": true
+          "required": true,
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "slug": {
           "type": "string",
-          "unique": true
+          "unique": true,
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "featured": {
           "type": "boolean",
-          "default": false
+          "default": false,
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "createdAt": {
           "type": "datetime"
@@ -2182,6 +2216,22 @@
           "useJoinTable": false,
           "private": true
         },
+        "localizations": {
+          "writable": true,
+          "private": false,
+          "configurable": false,
+          "visible": false,
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::article.article"
+        },
+        "locale": {
+          "writable": true,
+          "private": false,
+          "configurable": false,
+          "visible": false,
+          "type": "string"
+        },
         "sitemap_exclude": {
           "writable": true,
           "private": true,
@@ -2202,16 +2252,30 @@
         "options": {
           "draftAndPublish": true
         },
-        "pluginOptions": {},
+        "pluginOptions": {
+          "i18n": {
+            "localized": true
+          }
+        },
         "attributes": {
           "title": {
             "type": "string",
             "required": true,
-            "unique": true
+            "unique": true,
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "body": {
             "type": "richtext",
-            "required": true
+            "required": true,
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "illustration": {
             "type": "media",
@@ -2219,7 +2283,12 @@
             "required": true,
             "allowedTypes": [
               "images"
-            ]
+            ],
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "tags": {
             "type": "relation",
@@ -2229,15 +2298,30 @@
           },
           "description": {
             "type": "text",
-            "required": true
+            "required": true,
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "slug": {
             "type": "string",
-            "unique": true
+            "unique": true,
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "featured": {
             "type": "boolean",
-            "default": false
+            "default": false,
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           }
         },
         "kind": "collectionType"
@@ -2263,11 +2347,20 @@
       "options": {
         "draftAndPublish": false
       },
-      "pluginOptions": {},
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "attributes": {
         "full_name": {
           "type": "string",
-          "required": true
+          "required": true,
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "landing": {
           "type": "media",
@@ -2275,28 +2368,53 @@
           "required": true,
           "allowedTypes": [
             "images"
-          ]
+          ],
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "description": {
-          "type": "richtext"
+          "type": "richtext",
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "baseline": {
           "type": "string",
-          "required": true
+          "required": true,
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "words": {
           "displayName": "wordcloud",
           "type": "component",
           "repeatable": true,
-          "component": "homepage.wordcloud"
+          "component": "homepage.wordcloud",
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "user": {
+          "type": "media",
+          "multiple": false,
+          "required": true,
           "allowedTypes": [
             "images"
           ],
-          "type": "media",
-          "multiple": false,
-          "required": true
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "createdAt": {
           "type": "datetime"
@@ -2324,6 +2442,22 @@
           "useJoinTable": false,
           "private": true
         },
+        "localizations": {
+          "writable": true,
+          "private": false,
+          "configurable": false,
+          "visible": false,
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::homepage.homepage"
+        },
+        "locale": {
+          "writable": true,
+          "private": false,
+          "configurable": false,
+          "visible": false,
+          "type": "string"
+        },
         "sitemap_exclude": {
           "writable": true,
           "private": true,
@@ -2344,11 +2478,20 @@
         "options": {
           "draftAndPublish": false
         },
-        "pluginOptions": {},
+        "pluginOptions": {
+          "i18n": {
+            "localized": true
+          }
+        },
         "attributes": {
           "full_name": {
             "type": "string",
-            "required": true
+            "required": true,
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "landing": {
             "type": "media",
@@ -2356,28 +2499,53 @@
             "required": true,
             "allowedTypes": [
               "images"
-            ]
+            ],
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "description": {
-            "type": "richtext"
+            "type": "richtext",
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "baseline": {
             "type": "string",
-            "required": true
+            "required": true,
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "words": {
             "displayName": "wordcloud",
             "type": "component",
             "repeatable": true,
-            "component": "homepage.wordcloud"
+            "component": "homepage.wordcloud",
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "user": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
             "allowedTypes": [
               "images"
             ],
-            "type": "media",
-            "multiple": false,
-            "required": true
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           }
         },
         "kind": "singleType"
@@ -2403,11 +2571,20 @@
       "options": {
         "draftAndPublish": true
       },
-      "pluginOptions": {},
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "attributes": {
         "date": {
           "required": true,
-          "type": "date"
+          "type": "date",
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "screenshots": {
           "type": "media",
@@ -2415,7 +2592,12 @@
           "required": true,
           "allowedTypes": [
             "images"
-          ]
+          ],
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "illustration": {
           "type": "media",
@@ -2423,17 +2605,37 @@
           "required": false,
           "allowedTypes": [
             "images"
-          ]
+          ],
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "repo_link": {
-          "type": "string"
+          "type": "string",
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "website": {
-          "type": "string"
+          "type": "string",
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "body": {
           "type": "richtext",
-          "required": true
+          "required": true,
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "tags": {
           "type": "relation",
@@ -2443,14 +2645,29 @@
         },
         "title": {
           "type": "string",
-          "required": true
+          "required": true,
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "slug": {
-          "type": "string"
+          "type": "string",
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "featured": {
           "type": "boolean",
-          "default": false
+          "default": false,
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "createdAt": {
           "type": "datetime"
@@ -2484,6 +2701,22 @@
           "useJoinTable": false,
           "private": true
         },
+        "localizations": {
+          "writable": true,
+          "private": false,
+          "configurable": false,
+          "visible": false,
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::project.project"
+        },
+        "locale": {
+          "writable": true,
+          "private": false,
+          "configurable": false,
+          "visible": false,
+          "type": "string"
+        },
         "sitemap_exclude": {
           "writable": true,
           "private": true,
@@ -2504,11 +2737,20 @@
         "options": {
           "draftAndPublish": true
         },
-        "pluginOptions": {},
+        "pluginOptions": {
+          "i18n": {
+            "localized": true
+          }
+        },
         "attributes": {
           "date": {
             "required": true,
-            "type": "date"
+            "type": "date",
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "screenshots": {
             "type": "media",
@@ -2516,7 +2758,12 @@
             "required": true,
             "allowedTypes": [
               "images"
-            ]
+            ],
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "illustration": {
             "type": "media",
@@ -2524,17 +2771,37 @@
             "required": false,
             "allowedTypes": [
               "images"
-            ]
+            ],
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "repo_link": {
-            "type": "string"
+            "type": "string",
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "website": {
-            "type": "string"
+            "type": "string",
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "body": {
             "type": "richtext",
-            "required": true
+            "required": true,
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "tags": {
             "type": "relation",
@@ -2544,14 +2811,29 @@
           },
           "title": {
             "type": "string",
-            "required": true
+            "required": true,
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "slug": {
-            "type": "string"
+            "type": "string",
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "featured": {
             "type": "boolean",
-            "default": false
+            "default": false,
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           }
         },
         "kind": "collectionType"
@@ -2571,19 +2853,34 @@
       "info": {
         "singularName": "tag",
         "pluralName": "tags",
-        "displayName": "tag"
+        "displayName": "tag",
+        "description": ""
       },
       "options": {
         "draftAndPublish": false
       },
-      "pluginOptions": {},
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "attributes": {
         "title": {
           "type": "string",
-          "required": true
+          "required": true,
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "description": {
-          "type": "text"
+          "type": "text",
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          }
         },
         "articles": {
           "type": "relation",
@@ -2623,6 +2920,22 @@
           "useJoinTable": false,
           "private": true
         },
+        "localizations": {
+          "writable": true,
+          "private": false,
+          "configurable": false,
+          "visible": false,
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::tag.tag"
+        },
+        "locale": {
+          "writable": true,
+          "private": false,
+          "configurable": false,
+          "visible": false,
+          "type": "string"
+        },
         "sitemap_exclude": {
           "writable": true,
           "private": true,
@@ -2637,19 +2950,34 @@
         "info": {
           "singularName": "tag",
           "pluralName": "tags",
-          "displayName": "tag"
+          "displayName": "tag",
+          "description": ""
         },
         "options": {
           "draftAndPublish": false
         },
-        "pluginOptions": {},
+        "pluginOptions": {
+          "i18n": {
+            "localized": true
+          }
+        },
         "attributes": {
           "title": {
             "type": "string",
-            "required": true
+            "required": true,
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "description": {
-            "type": "text"
+            "type": "text",
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            }
           },
           "articles": {
             "type": "relation",

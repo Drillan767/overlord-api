@@ -15,6 +15,11 @@
           "description",
           "slug",
           "featured"
+        ],
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
         ]
       },
       "conditions": []
@@ -22,13 +27,25 @@
     {
       "action": "plugin::content-manager.explorer.delete",
       "subject": "api::article.article",
-      "properties": {},
+      "properties": {
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
+        ]
+      },
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.publish",
       "subject": "api::article.article",
-      "properties": {},
+      "properties": {
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
+        ]
+      },
       "conditions": []
     },
     {
@@ -43,6 +60,11 @@
           "description",
           "slug",
           "featured"
+        ],
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
         ]
       },
       "conditions": []
@@ -59,6 +81,11 @@
           "description",
           "slug",
           "featured"
+        ],
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
         ]
       },
       "conditions": []
@@ -74,6 +101,11 @@
           "baseline",
           "words.word",
           "user"
+        ],
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
         ]
       },
       "conditions": []
@@ -81,7 +113,13 @@
     {
       "action": "plugin::content-manager.explorer.delete",
       "subject": "api::homepage.homepage",
-      "properties": {},
+      "properties": {
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
+        ]
+      },
       "conditions": []
     },
     {
@@ -95,6 +133,11 @@
           "baseline",
           "words.word",
           "user"
+        ],
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
         ]
       },
       "conditions": []
@@ -110,6 +153,11 @@
           "baseline",
           "words.word",
           "user"
+        ],
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
         ]
       },
       "conditions": []
@@ -129,6 +177,11 @@
           "title",
           "slug",
           "featured"
+        ],
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
         ]
       },
       "conditions": []
@@ -136,13 +189,25 @@
     {
       "action": "plugin::content-manager.explorer.delete",
       "subject": "api::project.project",
-      "properties": {},
+      "properties": {
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
+        ]
+      },
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.publish",
       "subject": "api::project.project",
-      "properties": {},
+      "properties": {
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
+        ]
+      },
       "conditions": []
     },
     {
@@ -160,6 +225,11 @@
           "title",
           "slug",
           "featured"
+        ],
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
         ]
       },
       "conditions": []
@@ -179,6 +249,11 @@
           "title",
           "slug",
           "featured"
+        ],
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
         ]
       },
       "conditions": []
@@ -192,6 +267,11 @@
           "description",
           "articles",
           "projects"
+        ],
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
         ]
       },
       "conditions": []
@@ -199,7 +279,13 @@
     {
       "action": "plugin::content-manager.explorer.delete",
       "subject": "api::tag.tag",
-      "properties": {},
+      "properties": {
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
+        ]
+      },
       "conditions": []
     },
     {
@@ -211,6 +297,11 @@
           "description",
           "articles",
           "projects"
+        ],
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
         ]
       },
       "conditions": []
@@ -224,6 +315,11 @@
           "description",
           "articles",
           "projects"
+        ],
+        "locales": [
+          "en",
+          "fr",
+          "ko-KR"
         ]
       },
       "conditions": []
